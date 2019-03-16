@@ -10,15 +10,15 @@ class Model{
     public function __call($name, $args)
     {
         $method = substr($name, 0, 3);
-        $fieldName = substr($name, 3, strlen($name));
+        $field = substr($name, 3, strlen($name));
 
         switch ($method) {
 
             case "get":
-                return $this->values[$fieldName];
+                return $this->values[$field];
             break;
             case "set":
-                $this->values[$fieldName] = $args[0];
+                $this->values[$field] = $args[0];
             break;
 
         }
